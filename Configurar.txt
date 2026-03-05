@@ -1,0 +1,21 @@
+Criar projeto:
+    -  composer create-project laravel/laravel AprendeStore-backend
+
+no arquivo .env
+    app_name = AprendeStore
+    app_locale = pt_BR
+    APP_FALLBACK_LOCALE = pt_BR
+
+- Instalar api
+    - php artisan install:api
+--------------------------------------------------------------------------------
+Configuração de CORS - Proteger recursos da api
+    - php artisan config:publish cors
+
+configurar em: config/cors.php
+--------------------------------------------------------------------------------
+PLANEJAMENTO DA API
+
+    -
+
+
