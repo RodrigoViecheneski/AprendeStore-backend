@@ -120,7 +120,7 @@ npm start
 
 ## General
 
-### `GET /ping`
+### `GET /ping` -OK
 
 - **Description:** Health check endpoint.
 - **Auth:** None

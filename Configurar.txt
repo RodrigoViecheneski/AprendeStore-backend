@@ -14,8 +14,15 @@ Configuração de CORS - Proteger recursos da api
 
 configurar em: config/cors.php
 --------------------------------------------------------------------------------
-PLANEJAMENTO DA API
+Criar a migration junto com o model para Banner
+    - php artisan make:model Banner -m
+    Configura e:
+    - php artisan migrate
+    - php artisan make:controller BannerController
+    - php artisan make:seeder BannersSeeder
+    - php artisan db:seed
+    - php artisan storage:link
 
-    -
-
+    - php artisan migrate:fresh --seed
+-------------------------------------------------------------------------------
 
