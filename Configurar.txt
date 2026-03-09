@@ -25,4 +25,11 @@ Criar a migration junto com o model para Banner
 
     - php artisan migrate:fresh --seed
 -------------------------------------------------------------------------------
+Criar a migration junto com o model de Categoria
+    - php artisan make:model Category -m
+    - php artisan migrate
+    - php artisan make:seeder CategorySeeder
+    - php artisan make:seeder ProductSeeder
+    - php artisan migrate:fresh --seed
+--------------------------------------------------------------------------------
 
