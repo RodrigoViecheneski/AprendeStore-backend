@@ -32,4 +32,25 @@ Criar a migration junto com o model de Categoria
     - php artisan make:seeder ProductSeeder
     - php artisan migrate:fresh --seed
 --------------------------------------------------------------------------------
+Criar relacionamento de imagens e Produtos
+    - php artisan make model ProductImage -m
+    - php artisan make:seeder ProductImageSeeder
+    - php artisan migrate:fresh --seed
+--------------------------------------------------------------------------------
+Criar endpoint de produtos com imagens
+    - php artisan make:controller ProductController
+    - php artisan migrate:fresh --seed
+--------------------------------------------------------------------------------
+Criar CategoryMetadata
+    - php artisan make:model CategoryMetadata -m
+    - php artisan make:seeder CategoryMetadataSeeder
+    -  php artisan migrate:fresh --seed
+-------------------------------------------------------------------------------
+Criar MetadataValue
+    - php artisan make:model MetadataValue -m
+Relacionando Metadados com Produto
+    - php artisan make:model ProductMetadata -m liga os dados
+        - php artisan migrate:fresh --seed
+Filtrando produtos pelos Metadados
+Buscando produto único
 

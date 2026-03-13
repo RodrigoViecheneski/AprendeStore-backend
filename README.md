@@ -133,7 +133,7 @@ npm start
 
 ## Banners
 
-### `GET /banners`
+### `GET /banners` -OK
 
 - **Description:** Get all banners.
 - **Auth:** None
@@ -154,7 +154,7 @@ npm start
 
 ## Products
 
-### `GET /products`
+### `GET /products` -OK
 
 - **Description:** List products with optional filters.
 - **Auth:** None

@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BannerController;
+use App\Http\Controllers\ProductController;
 
 /*Route::get('/user', function (Request $request) {
     return $request->user();
@@ -13,3 +14,4 @@ Route::get('/ping', function () {
 });
 
 Route::get('/banners', [BannerController::class, 'getAllBanners']);
+Route::get('/products', [ProductController::class, 'getAllProducts']);

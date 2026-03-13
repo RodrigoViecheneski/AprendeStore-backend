@@ -14,12 +14,12 @@ class CategorySeeder extends Seeder
     public function run(): void
     {
         Category::create([
-            'name' => 'Categoria de Exemplo',
-            'slug' => 'Categoria de Exemplo'
+            'name' => 'Camisetas',
+            'slug' => 'camisetas'
         ]);
         Category::create([
-            'name' => 'Categoria de Exemplo2',
-            'slug' => 'Categoria de Exemplo2'
+            'name' => 'Eletrônicos',
+            'slug' => 'Eletronicos'
         ]);
     }
 }
