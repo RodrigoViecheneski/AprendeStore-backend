@@ -85,4 +85,48 @@ class ProductController extends Controller
             })
         ]);
     }
+    public function getProductById(Request $request, $id)
+    {
+        if (!is_numeric($id)) {
+            return response()->json([
+                'error' => 'Produto inválido.',
+                'product' => null,
+                'category' => null
+            ], 400);
+        }
+        $product = Product::with(['category', 'images'])->find($id);
+
+        if (!$product) {
+            return response()->json([
+                'error' => 'Produto não encontrado.',
+                'product' => null,
+                'category' => null
+            ], 404);
+        }
+        //dd($product);
+        $images = $product->images->map(function ($image) {
+            return asset('storage/' . $image->url);
+        })->toArray();
+        // verificar se esta vaziou, se estiver, a gente coloca o default
+        if (empty($images)) {
+            $images = [asset('storage/products/default-product.svg')];
+        }
+
+        return response()->json([
+            'error' => null,
+            'product' => [
+                'id' => $product->id,
+                'label' => $product->label,
+                'price' => $product->price,
+                'description' => $product->description,
+                'category_id' => $product->category_id,
+                'images' => $images,
+            ],
+            'category' => [
+                'id' => $product->category->id,
+                'name' => $product->category->name,
+                'slug'  => $product->category->slug,
+            ]
+        ]);
+    }
 }

@@ -15,3 +15,4 @@ Route::get('/ping', function () {
 
 Route::get('/banners', [BannerController::class, 'getAllBanners']);
 Route::get('/products', [ProductController::class, 'getAllProducts']);
+Route::get('/product/{id}', [ProductController::class, 'getProductById']);
