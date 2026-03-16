@@ -53,4 +53,6 @@ Relacionando Metadados com Produto
         - php artisan migrate:fresh --seed
 Filtrando produtos pelos Metadados
 Buscando produto único
-
+------------------------------------------------------------------------------
+Criar categorias e Metadados
+    - php artisan make:controller CategoryController
