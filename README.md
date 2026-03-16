@@ -232,7 +232,7 @@ npm start
 
 ## Categories
 
-### `GET /category/:slug/metadata`
+### `GET /category/:slug/metadata` - OK
 
 - **Description:** Get category and its metadata by slug.
 - **Auth:** None
@@ -263,7 +263,7 @@ npm start
 
 ## Cart
 
-### `POST /cart/mount`
+### `POST /cart/mount` - OK
 
 - **Description:** Get product details for a list of product IDs.
 - **Auth:** None

@@ -56,3 +56,5 @@ Buscando produto único
 ------------------------------------------------------------------------------
 Criar categorias e Metadados
     - php artisan make:controller CategoryController
+Endpoint de Montagem do Carrinho
+Endpoint de Calculo de Frete
