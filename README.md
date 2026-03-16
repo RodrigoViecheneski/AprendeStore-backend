@@ -180,7 +180,7 @@ npm start
     }
     ```
 
-### `GET /product/:id`
+### `GET /product/:id` -OK
 
 - **Description:** Get a single product by ID.
 - **Auth:** None
@@ -208,7 +208,7 @@ npm start
     }
     ```
 
-### `GET /product/:id/related`
+### `GET /product/:id/related` - OK
 
 - **Description:** Get related products from the same category.
 - **Auth:** None

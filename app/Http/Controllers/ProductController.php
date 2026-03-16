@@ -103,6 +103,7 @@ class ProductController extends Controller
                 'category' => null
             ], 404);
         }
+        $product->increment('views_count'); //contabiliza a visualização do produto
         //dd($product);
         $images = $product->images->map(function ($image) {
             return asset('storage/' . $image->url);
@@ -127,6 +128,51 @@ class ProductController extends Controller
                 'name' => $product->category->name,
                 'slug'  => $product->category->slug,
             ]
+        ]);
+    }
+    public function getProductsRelatedById(Request $request, $id)
+    {
+        if (!is_numeric($id)) {
+            return response()->json([
+                'error' => 'Produto inválido.',
+                'products' => []
+            ], 400);
+        }
+        $validator = Validator::make(
+            $request->query(),
+            ['limit' => ['sometimes', 'numeric']],
+            ['limit' => 'O campo limit deve ser um número válido.']
+        );
+        if ($validator->fails()) {
+            return response()->json([
+                'error' => $validator->errors()->first(),
+                'products' => []
+            ], 400);
+        }
+        $product = Product::find($id);
+        if (!$product) {
+            return response()->json([
+                'error' => 'Produto não encontrado.',
+                'products' => []
+            ], 404);
+        }
+        $limit = $request->query('limit', 10);
+        $relatedProducts = Product::where('category_id', $product->category_id)
+            ->where('id', '!=', $product->id)
+            ->with('images')
+            ->limit($limit)
+            ->get();
+        return response()->json([
+            'error' => null,
+            'products' => $relatedProducts->map(function ($product) {
+                return [
+                    'id' => $product->id,
+                    'label' => $product->label,
+                    'price' => $product->price,
+                    'images' => asset('storage/' . ($product->images->first()->url ?? '/products/default-product.svg')),
+                    'liked' => false // TODO: IMPLEMENTAR O LIKED
+                ];
+            })
         ]);
     }
 }
