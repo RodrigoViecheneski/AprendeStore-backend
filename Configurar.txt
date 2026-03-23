@@ -58,3 +58,19 @@ Criar categorias e Metadados
     - php artisan make:controller CategoryController
 Endpoint de Montagem do Carrinho
 Endpoint de Calculo de Frete
+------------------------------------------------------------------------------
+Registro de Usuários
+
+    - php artisan make:controller UserController
+Login de Usuários
+Deslogando Usuário de outros locais
+------------------------------------------------------------------------------
+Criando Migration e Seeders de Address
+    - php artisan make:model Address -m
+    - php artisan make:seeder AddressSeeder
+    - php artisan make:seeder UserSeeder
+    - php artisan migrate:fresh --seed
+------------------------------------------------------------------------------
+Estruturando o banco para pedidos e itens dos pedidos
+    - php artisan make:model Order -m
+    - php artisan make:model OrderProduct -m

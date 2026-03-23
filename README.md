@@ -286,7 +286,7 @@ npm start
     }
     ```
 
-### `GET /cart/shipping`
+### `GET /cart/shipping` - ok
 
 - **Description:** Calculate shipping cost and days for a zipcode.
 - **Auth:** None
@@ -393,7 +393,7 @@ npm start
     }
     ```
 
-### `POST /user/addresses`
+### `POST /user/addresses` - Ok 
 
 - **Description:** Add a new address for the logged-in user.
 - **Auth:** Yes (Bearer token)
